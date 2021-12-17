@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Examen_3.ViewModels"
+             x:Class="Examen_Movil.Views.ModificarOperaciones">
+    <ContentPage.BindingContext>
+        <vm:BaseViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            <Entry x:Name="idpago" Text="{Binding Id_pago, Mode=TwoWay}" IsVisible="false" />
+
+            <Entry x:Name="description" Text="{Binding Descripcion, Mode=TwoWay}" Placeholder="Description" />
+            <Entry x:Name="monto" Text="{Binding Monto, Mode=TwoWay}" Placeholder="Description" />
+            <Label  Text="Due Date"></Label>
+            <DatePicker x:Name="DueDate" Date="{Binding DueDate, Mode=TwoWay}" ></DatePicker>
+
+           
+            <Button x:Name="btnlista" Text="Lista" Clicked="btnlista_Clicked"/>
+
+            <Button x:Name="btnactualizar" Text="Update" Clicked="btnactualizar_Clicked"/>
+
+            <Button  x:Name="btneliminar" Text="Delete" Clicked="btneliminar_Clicked" Command="{Binding cmdAddTask1}"/>
+         
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

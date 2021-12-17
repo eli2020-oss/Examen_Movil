@@ -1,0 +1,33 @@
+﻿using Examen_Movil.Views;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Examen_3.Views
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ListaPagos : ContentPage
+    {
+        public ListaPagos()
+        {
+            InitializeComponent();
+        }
+
+        private async void ListaPrecios_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Models.Operacion item = (Models.Operacion)e.Item;
+            /// await DisplayAlert("Elemento Tocado " , "Descripcion: " + item.Descripcion, "Ok");
+
+            var page = new ModificarOperaciones();
+           page.BindingContext = item;
+           await Navigation.PushModalAsync(page);
+        }
+    }
+    
+
+}
